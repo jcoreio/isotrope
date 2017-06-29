@@ -2,8 +2,8 @@
 .*/node_modules/.*/tests?/.*\.json
 
 [include]
-./src
-./test
+./lib
+./flowtest
 
 [libs]
 

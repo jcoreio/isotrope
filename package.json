@@ -1,38 +1,29 @@
 {
-  "name": "isotropic-layout",
+  "name": "isotrope",
   "version": "0.0.0-development",
   "description": "some simple constants for making layouts that work in any direction",
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint lib test",
-    "lint:fix": "eslint --fix lib test",
-    "lint:watch": "esw --watch lib test",
+    "lint": "eslint lib",
+    "lint:fix": "eslint --fix lib",
+    "lint:watch": "esw --watch lib",
     "flow": "flow",
-    "flow:coverage": "for file in lib/**.js test/**.js; do echo $file; flow coverage $file; done",
-    "flow:watch": "flow-watch -e js,js.flow,flowconfig --ignore lib/ --ignore node_modules/ --watch .flowconfig --watch lib/ --watch test/",
-    "test": "NODE_ENV=production BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha $npm_package_config_mocha",
-    "test:watch": "mocha --watch $npm_package_config_mocha",
+    "flow:coverage": "for file in lib/**.js; do echo $file; flow coverage $file; done",
+    "flow:watch": "flow-watch -e js,js.flow,flowconfig --ignore node_modules/ --watch .flowconfig --watch lib/ --watch flowtest/",
     "commitmsg": "validate-commit-msg",
     "precommit": "npm run lint && flow",
-    "prepush": "npm test",
-    "prepublish": "npm run lint && flow && npm test",
+    "prepublish": "npm run lint && flow",
     "open:coverage": "open coverage/lcov-report/index.html",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
-    "mocha": "./test/**/*.js",
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "nyc": {
-    "include": [
-      "lib/**/*.js"
-    ]
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jcoreio/isotropic-layout.git"
+    "url": "https://github.com/jcoreio/isotrope.git"
   },
   "keywords": [
     "es5"
@@ -40,24 +31,19 @@
   "author": "Andy Edwards",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jcoreio/isotropic-layout/issues"
+    "url": "https://github.com/jcoreio/isotrope/issues"
   },
-  "homepage": "https://github.com/jcoreio/isotropic-layout#readme",
+  "homepage": "https://github.com/jcoreio/isotrope#readme",
   "devDependencies": {
     "@jedwards1211/eslint-config-es5": "^1.0.0",
     "@jedwards1211/eslint-config-flow": "^1.0.0",
-    "chai": "^3.5.0",
     "copy": "^0.3.0",
-    "coveralls": "^2.13.0",
     "eslint": "^3.18.0",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-watch": "^3.0.1",
     "flow-bin": "^0.42.0",
     "flow-watch": "^1.1.1",
     "husky": "^0.13.3",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
-    "nyc": "^10.2.0",
     "rimraf": "^2.6.1",
     "semantic-release": "^6.3.6",
     "validate-commit-msg": "^2.11.2"

@@ -1,6 +1,7 @@
 coverage
 .nyc_output
 test
+flowtest
 node_modules
 .eslintrc
 .flowconfig
