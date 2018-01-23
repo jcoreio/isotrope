@@ -20,6 +20,10 @@ declare export var oppositeOf:
   {[direction: Direction]: Direction} & 
   {[dimension: Dimension]: Dimension} &
   {[axis: Axis]: Axis}
+declare export var oppositeSide: {[side: Side]: Side}
+declare export var oppositeDirection: {[direction: Direction]: Direction}
+declare export var oppositeDimension: {[dimension: Dimension]: Dimension}
+declare export var oppositeAxis: {[axis: Axis]: Axis}
 declare export var loSide: {[axis: Axis]: Side}
 declare export var hiSide: {[axis: Axis]: Side}
 declare export var negativeDirection: {[axis: Axis]: Direction}
